@@ -10,9 +10,6 @@ import ru.llxodz.pizzahouse.R
 
 class ViewPagerFragment : Fragment() {
 
-    private var state = 0
-    private var progressCircular = 34f
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

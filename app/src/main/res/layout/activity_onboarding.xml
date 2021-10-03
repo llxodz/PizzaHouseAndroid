@@ -22,18 +22,20 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="40dp"
-        android:backgroundTint="@color/orange"
         android:elevation="0dp"
         android:src="@drawable/ic_baseline_chevron_right_24"
+        app:backgroundTint="@color/orange"
+        app:elevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
     <ImageView
         android:id="@+id/iv_onboarding_back"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginBottom="40dp"
+        android:padding="16dp"
         android:src="@drawable/ic_baseline_chevron_left_24"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -2,9 +2,11 @@ package ru.llxodz.pizzahouse.activities.main.activities
 
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_onboarding.*
 import ru.llxodz.pizzahouse.R
@@ -24,6 +26,10 @@ class OnboardingActivity : AppCompatActivity() {
 
         var state = 0
         var progressCircular = 34f
+
+        window.statusBarColor = ContextCompat.getColor(this, R.color.mainBackground)
+        window.navigationBarColor = ContextCompat.getColor(this, R.color.mainBackground)
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
 
         val fragmentList = arrayListOf<Fragment>(
             BaseOnboardingFragment(0),
@@ -50,7 +56,7 @@ class OnboardingActivity : AppCompatActivity() {
                 progressCircular += 34f
                 state += 1
                 iv_onboarding_back.visibility = View.VISIBLE
-                progress_circular.setProgressWithAnimation(progressCircular, 700)
+                progress_circular.setProgressWithAnimation(progressCircular, 300)
             }
         }
 
@@ -58,7 +64,7 @@ class OnboardingActivity : AppCompatActivity() {
             viewPager.currentItem -= 1
             progressCircular -= 34f
             state -= 1
-            progress_circular.setProgressWithAnimation(progressCircular, 700)
+            progress_circular.setProgressWithAnimation(progressCircular, 300)
             if (viewPager.currentItem == 0) {
                 iv_onboarding_back.visibility = View.GONE
             }
