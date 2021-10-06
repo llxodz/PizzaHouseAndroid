@@ -2,4 +2,7 @@
     <string name="app_name">PizzaHouse</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="string_online_order">ЗАКАЗ ОНЛАЙН</string>
+    <string name="string_delicious_pizza">ВКУСНАЯ ПИЦЦА</string>
+    <string name="string_free_shipping">БЕСПЛАТНАЯ ДОСТАВКА</string>
 </resources>

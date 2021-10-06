@@ -4,14 +4,16 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import ru.llxodz.pizzahouse.R
+import ru.llxodz.pizzahouse.activities.main.helper.Constants
 
 class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        if (wasOnboarding()) {
+        val sharedPreferences =
+            getSharedPreferences(Constants.ru_llxodz_pizzahouse_onboarding, Context.MODE_PRIVATE)
+
+        if (sharedPreferences.getBoolean(Constants.ru_llxodz_pizzahouse_onboarding_state, false)) {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
@@ -20,10 +22,5 @@ class SplashScreen : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-    }
-
-    private fun wasOnboarding(): Boolean {
-        val sharedPref = getSharedPreferences("onboarding", Context.MODE_PRIVATE)
-        return sharedPref.getBoolean("Finished", false)
     }
 }

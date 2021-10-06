@@ -24,19 +24,19 @@ class BaseOnboardingFragment(private val state: Int) : Fragment() {
         when (state) {
             0 -> {
                 iv_onboarding_image.setImageResource(R.drawable.onboarding_image_one)
-                tv_onboarding_title.text = "ЗАКАЗ ОНЛАЙН"
+                tv_onboarding_title.text = getString(R.string.string_online_order)
                 tv_onboarding_description.text =
                     "Совершить заказ онлайнСовершить заказ онлайнСовершить заказ онлайн"
             }
             1 -> {
                 iv_onboarding_image.setImageResource(R.drawable.onboarding_image_two)
-                tv_onboarding_title.text = "ВКУСНАЯ ПИЦЦА"
+                tv_onboarding_title.text = getString(R.string.string_delicious_pizza)
                 tv_onboarding_description.text =
                     "Совершить заказ онлайнСовершить заказ онлайнСовершить заказ онлайн"
             }
             2 -> {
                 iv_onboarding_image.setImageResource(R.drawable.onboarding_image_third)
-                tv_onboarding_title.text = "БЕСПЛАТНАЯ ДОСТАВКА"
+                tv_onboarding_title.text = getString(R.string.string_free_shipping)
                 tv_onboarding_description.text =
                     "Совершить заказ онлайнСовершить заказ онлайнСовершить заказ онлайн"
             }
