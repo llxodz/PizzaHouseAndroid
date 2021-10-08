@@ -24,52 +24,54 @@ class OnboardingActivity : AppCompatActivity() {
 
     private fun setupOnboarding() {
 
-        var progressCircular = 34f
+        var progressCircular = 0f
 
         window.statusBarColor = ContextCompat.getColor(this, R.color.mainBackground)
         window.navigationBarColor = ContextCompat.getColor(this, R.color.mainBackground)
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
 
         val fragmentList = arrayListOf<Fragment>(
-            BaseOnboardingFragment(StateOnboarding.FIRST_FRAGMENT.state),
-            BaseOnboardingFragment(StateOnboarding.SECOND_FRAGMENT.state),
-            BaseOnboardingFragment(StateOnboarding.THIRD_FRAGMENT.state)
+            BaseOnboardingFragment(BaseOnboardingFragment.StateOnboarding.FIRST_FRAGMENT),
+            BaseOnboardingFragment(BaseOnboardingFragment.StateOnboarding.SECOND_FRAGMENT),
+            BaseOnboardingFragment(BaseOnboardingFragment.StateOnboarding.THIRD_FRAGMENT)
         )
 
-        val adapter =
-            ViewPagerAdapter(fragmentList, supportFragmentManager, lifecycle)
-
-        vp_onboarding.adapter = adapter
+        vp_onboarding.adapter = ViewPagerAdapter(fragmentList, supportFragmentManager, lifecycle)
 
         val viewPager = vp_onboarding
 
         viewPager.isUserInputEnabled = false
 
+        // Set progress Circular Progress Bar
+        progress_circular.progress =
+            ((viewPager.currentItem + 1).toFloat() / fragmentList.size.toFloat()) * 100
+        progressCircular =
+            ((viewPager.currentItem + 1).toFloat() / fragmentList.size.toFloat()) * 100
+
+
         fab_onboarding.setOnClickListener {
-            if (viewPager.currentItem == StateOnboarding.THIRD_FRAGMENT.state) {
+            if (viewPager.currentItem >= fragmentList.lastIndex) {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 onboardingFinished()
             } else {
-                viewPager.currentItem += StateOnboarding.BASE_STEP.state
-                progressCircular += 100 / 3
+                viewPager.currentItem += 1
+                progressCircular =
+                    ((viewPager.currentItem.toFloat() + 1) / fragmentList.size.toFloat()) * 100
                 iv_onboarding_back.visibility = View.VISIBLE
                 progress_circular.setProgressWithAnimation(progressCircular, 300)
             }
         }
 
         iv_onboarding_back.setOnClickListener {
-            viewPager.currentItem -= StateOnboarding.BASE_STEP.state
-            progressCircular -= 100 / 3
+            viewPager.currentItem -= 1
+            progressCircular =
+                ((viewPager.currentItem.toFloat() + 1) / fragmentList.size.toFloat()) * 100
             progress_circular.setProgressWithAnimation(progressCircular, 300)
             if (viewPager.currentItem == 0) {
                 iv_onboarding_back.visibility = View.GONE
             }
         }
-    }
-
-    private enum class StateOnboarding(val state: Int) {
-        FIRST_FRAGMENT(0), SECOND_FRAGMENT(1), THIRD_FRAGMENT(2), BASE_STEP(1)
     }
 
     private fun onboardingFinished() {
