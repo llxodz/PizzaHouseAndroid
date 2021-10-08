@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.main.activities.OnboardingActivity">
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp_onboarding"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_onboarding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="40dp"
+        android:elevation="0dp"
+        android:src="@drawable/ic_baseline_chevron_right_24"
+        app:backgroundTint="@color/orange"
+        app:elevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_onboarding_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="40dp"
+        android:padding="16dp"
+        android:src="@drawable/ic_baseline_chevron_left_24"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fab_onboarding" />
+
+    <com.mikhaellopez.circularprogressbar.CircularProgressBar
+        android:id="@+id/progress_circular"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        app:cpb_background_progressbar_color="@color/mainBackground"
+        app:cpb_progress_max="100"
+        app:cpb_progressbar_color="@color/orange"
+        app:cpb_progressbar_width="2dp"
+        app:cpb_round_border="true"
+        app:layout_constraintBottom_toBottomOf="@id/fab_onboarding"
+        app:layout_constraintLeft_toLeftOf="@id/fab_onboarding"
+        app:layout_constraintRight_toRightOf="@id/fab_onboarding"
+        app:layout_constraintTop_toTopOf="@id/fab_onboarding" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,10 @@
-package ru.llxodz.pizzahouse.activities.main
+package ru.llxodz.pizzahouse.activities.main.activities
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
 import ru.llxodz.pizzahouse.R
 
 class MainActivity : AppCompatActivity() {
