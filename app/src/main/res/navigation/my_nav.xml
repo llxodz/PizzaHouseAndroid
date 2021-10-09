@@ -3,11 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_nav"
-    app:startDestination="@id/viewPagerFragment">
-
+    app:startDestination="@id/menuFragment">
     <fragment
-        android:id="@+id/viewPagerFragment"
-        android:name="ru.llxodz.pizzahouse.activities.main.fragments.onboarding.ViewPagerFragment"
-        android:label="fragment_view_pager"
-        tools:layout="@layout/fragment_view_pager" />
+        android:id="@+id/menuFragment"
+        android:name="ru.llxodz.pizzahouse.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="ru.llxodz.pizzahouse.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/salesFragment"
+        android:name="ru.llxodz.pizzahouse.SalesFragment"
+        android:label="fragment_sales"
+        tools:layout="@layout/fragment_sales" />
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="ru.llxodz.pizzahouse.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" />
 </navigation>
