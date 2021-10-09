@@ -15,8 +15,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:menu="@menu/bottom_menu"
         app:labelVisibilityMode="labeled"
-        app:itemTextColor="@color/gray"
-        
+        app:itemTextColor="@drawable/bottom_nav_bar"
+        app:itemIconTint="@drawable/bottom_nav_bar"
         app:itemRippleColor="@color/orange" />
 
     <fragment
