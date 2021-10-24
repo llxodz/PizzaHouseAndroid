@@ -27,6 +27,8 @@
         android:layout_height="0dp"
         android:paddingTop="8dp"
         android:overScrollMode="never"
+        android:paddingBottom="10dp"
+        android:clipToPadding="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/frg_sales__tv_sales"
         app:layout_constraintLeft_toLeftOf="parent"

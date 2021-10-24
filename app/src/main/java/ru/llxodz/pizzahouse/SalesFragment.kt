@@ -1,16 +1,23 @@
 package ru.llxodz.pizzahouse
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_sales.*
+import kotlinx.android.synthetic.main.sales_row_item.*
 import ru.llxodz.pizzahouse.activities.main.adapters.SalesAdapter
 
+
 class SalesFragment : Fragment() {
+
+    private var btn = frg_sales_btn_promoCode
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
