@@ -5,4 +5,7 @@
     <string name="string_online_order">ОНЛАЙН ЗАКАЗ</string>
     <string name="string_delicious_pizza">ВКУСНАЯ ПИЦЦА</string>
     <string name="string_free_shipping">БЕСПЛАТНАЯ ДОСТАВКА</string>
+    <string name="tv_sales_description">Промокод можно использовать в день рождения и 3 дня после, не чаще чем один раз в год. Акция не суммируется с другими акциями</string>
+    <string name="tv_sales_title">В день рождения пицца в подарок!</string>
+    <string name="copy_promocode">Промокод скопирован!</string>
 </resources>
