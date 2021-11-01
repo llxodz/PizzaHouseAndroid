@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/mainBackground"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ProfileFragment">
+    tools:context=".activities.fragments.main_menu_fragments.ProfileFragment">
 
     <TextView
         android:layout_width="wrap_content"

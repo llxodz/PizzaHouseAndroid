@@ -1,4 +1,4 @@
-package ru.llxodz.pizzahouse
+package ru.llxodz.pizzahouse.activities.fragments.main_menu_fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,10 +13,11 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import ru.llxodz.pizzahouse.activities.main.adapters.SalesAdapter
-import ru.llxodz.pizzahouse.activities.main.helper.Constants
+import ru.llxodz.pizzahouse.R
+import ru.llxodz.pizzahouse.adapters.SalesAdapter
 import ru.llxodz.pizzahouse.api.ApiRequest
 import ru.llxodz.pizzahouse.api.ApiSalesItem
+import ru.llxodz.pizzahouse.helper.Constants
 
 
 class SalesFragment : Fragment() {

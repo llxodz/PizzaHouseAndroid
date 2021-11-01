@@ -13,10 +13,10 @@
         android:theme="@style/Theme.PizzaHouse"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".activities.main.activities.OnboardingActivity"
+            android:name="ru.llxodz.pizzahouse.activities.OnboardingActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activities.main.activities.SplashScreen"
+            android:name="ru.llxodz.pizzahouse.activities.SplashScreen"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -26,7 +26,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.main.activities.MainActivity"
+            android:name="ru.llxodz.pizzahouse.activities.MainActivity"
             android:screenOrientation="portrait" />
     </application>
 

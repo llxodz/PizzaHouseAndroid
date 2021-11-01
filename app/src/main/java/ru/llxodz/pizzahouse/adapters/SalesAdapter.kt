@@ -1,9 +1,8 @@
-package ru.llxodz.pizzahouse.activities.main.adapters
+package ru.llxodz.pizzahouse.adapters
 
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.sales_row_item.view.*
 import ru.llxodz.pizzahouse.R
-import ru.llxodz.pizzahouse.activities.main.helper.Constants
+import ru.llxodz.pizzahouse.helper.Constants
 import ru.llxodz.pizzahouse.api.ApiSalesItem
 
 class SalesAdapter(

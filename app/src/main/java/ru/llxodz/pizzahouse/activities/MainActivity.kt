@@ -1,4 +1,4 @@
-package ru.llxodz.pizzahouse.activities.main.activities
+package ru.llxodz.pizzahouse.activities
 
 import android.os.Bundle
 import android.view.View

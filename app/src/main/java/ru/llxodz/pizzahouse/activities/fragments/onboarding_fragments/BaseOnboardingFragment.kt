@@ -1,4 +1,4 @@
-package ru.llxodz.pizzahouse.activities.main.fragments.onboarding
+package ru.llxodz.pizzahouse.activities.fragments.onboarding_fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -26,19 +26,19 @@ class BaseOnboardingFragment(private val state: StateOnboarding) : Fragment() {
                 iv_onboarding_image.setImageResource(R.drawable.onboarding_image_one)
                 tv_onboarding_title.text = getString(R.string.string_online_order)
                 tv_onboarding_description.text =
-                    "Вы можете заказать нашу пиццу онлайн через приложение всего за несколько минут!"
+                    getString(R.string.string_online_order_description)
             }
             StateOnboarding.SECOND_FRAGMENT -> {
                 iv_onboarding_image.setImageResource(R.drawable.onboarding_image_two)
                 tv_onboarding_title.text = getString(R.string.string_delicious_pizza)
                 tv_onboarding_description.text =
-                    "Можно отведать самой лучшей пиццы на тонком или традиционном тесте"
+                    getString(R.string.string_delicious_pizza_description)
             }
             StateOnboarding.THIRD_FRAGMENT -> {
                 iv_onboarding_image.setImageResource(R.drawable.onboarding_image_third)
                 tv_onboarding_title.text = getString(R.string.string_free_shipping)
                 tv_onboarding_description.text =
-                    "Наш заказ приедет к вам абсолютно бесплатно или вы можете его забрать в ресторане"
+                    getString(R.string.string_free_shipping_description)
             }
         }
     }

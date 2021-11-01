@@ -1,4 +1,4 @@
-package ru.llxodz.pizzahouse.activities.main.activities
+package ru.llxodz.pizzahouse.activities
 
 import android.content.Context
 import android.content.Intent
@@ -7,11 +7,12 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.viewpager2.widget.ViewPager2
 import kotlinx.android.synthetic.main.activity_onboarding.*
 import ru.llxodz.pizzahouse.R
-import ru.llxodz.pizzahouse.activities.main.adapters.ViewPagerAdapter
-import ru.llxodz.pizzahouse.activities.main.fragments.onboarding.BaseOnboardingFragment
-import ru.llxodz.pizzahouse.activities.main.helper.Constants
+import ru.llxodz.pizzahouse.adapters.ViewPagerAdapter
+import ru.llxodz.pizzahouse.activities.fragments.onboarding_fragments.BaseOnboardingFragment
+import ru.llxodz.pizzahouse.helper.Constants
 
 class OnboardingActivity : AppCompatActivity() {
 
@@ -43,10 +44,8 @@ class OnboardingActivity : AppCompatActivity() {
         viewPager.isUserInputEnabled = false
 
         // Set progress Circular Progress Bar
-        progress_circular.progress =
-            ((viewPager.currentItem + 1).toFloat() / fragmentList.size.toFloat()) * 100
-        progressCircular =
-            ((viewPager.currentItem + 1).toFloat() / fragmentList.size.toFloat()) * 100
+        progress_circular.progress = setProgressCircular(viewPager, fragmentList)
+        progressCircular = setProgressCircular(viewPager, fragmentList)
 
 
         fab_onboarding.setOnClickListener {
@@ -56,8 +55,7 @@ class OnboardingActivity : AppCompatActivity() {
                 onboardingFinished()
             } else {
                 viewPager.currentItem += 1
-                progressCircular =
-                    ((viewPager.currentItem.toFloat() + 1) / fragmentList.size.toFloat()) * 100
+                progressCircular = setProgressCircular(viewPager, fragmentList)
                 iv_onboarding_back.visibility = View.VISIBLE
                 progress_circular.setProgressWithAnimation(progressCircular, 300)
             }
@@ -65,8 +63,7 @@ class OnboardingActivity : AppCompatActivity() {
 
         iv_onboarding_back.setOnClickListener {
             viewPager.currentItem -= 1
-            progressCircular =
-                ((viewPager.currentItem.toFloat() + 1) / fragmentList.size.toFloat()) * 100
+            progressCircular = setProgressCircular(viewPager, fragmentList)
             progress_circular.setProgressWithAnimation(progressCircular, 300)
             if (viewPager.currentItem == 0) {
                 iv_onboarding_back.visibility = View.GONE
@@ -81,5 +78,12 @@ class OnboardingActivity : AppCompatActivity() {
         editor.putBoolean(Constants.ru_llxodz_pizzahouse_onboarding_state, true)
         editor.apply()
         finish()
+    }
+
+    private fun setProgressCircular(
+        viewPager: ViewPager2,
+        fragmentList: ArrayList<Fragment>
+    ): Float {
+        return ((viewPager.currentItem + 1).toFloat() / fragmentList.size.toFloat()) * 100
     }
 }
