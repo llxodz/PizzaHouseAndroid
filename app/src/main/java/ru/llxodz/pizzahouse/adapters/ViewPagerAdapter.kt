@@ -1,4 +1,4 @@
-package ru.llxodz.pizzahouse.activities.main.adapters
+package ru.llxodz.pizzahouse.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

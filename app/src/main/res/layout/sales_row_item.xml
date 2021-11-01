@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="6dp"
+    android:elevation="4dp"
+    android:background="@drawable/layout_bg"
+    android:paddingBottom="6dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/frg_sales__iv_pizza"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        app:shapeAppearanceOverlay="@style/roundedImageView"
+        app:layout_constraintDimensionRatio="H, 5:2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/frg_sales__tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="center_vertical"
+        android:paddingStart="12dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="12dp"
+        android:text="@string/tv_sales_title"
+        android:textColor="@color/mainBlack"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frg_sales__iv_pizza" />
+
+    <TextView
+        android:id="@+id/frg_sales__tv_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="center_vertical"
+        android:paddingStart="12dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="12dp"
+        android:text="@string/tv_sales_description"
+        android:textColor="@color/mainBlack"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frg_sales__tv_title" />
+
+    <TextView
+        android:id="@+id/frg_sales__tv_promoCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingStart="12dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="12dp"
+        android:text="Промокод:"
+        android:textColor="@color/mainBlack"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frg_sales__tv_description" />
+
+    <TextView
+        android:id="@+id/frg_sales_tv_promoCode_name"
+        android:layout_width="0dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/dotted"
+        android:fontFamily="@font/montserrat_bold"
+        android:gravity="center"
+        android:text="HAPPYDAY"
+        android:textColor="@color/mainBlack"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frg_sales__tv_promoCode"
+        app:layout_constraintEnd_toStartOf="@+id/frg_sales_btn_promoCode" />
+
+    <Button
+        android:id="@+id/frg_sales_btn_promoCode"
+        android:layout_width="wrap_content"
+        android:layout_height="41dp"
+        android:backgroundTint="@color/orange"
+        android:fontFamily="@font/montserrat_medium"
+        android:stateListAnimator="@null"
+        android:text="СКОПИРОВАТЬ"
+        android:textSize="10sp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintBottom_toBottomOf="@id/frg_sales_tv_promoCode_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/frg_sales_tv_promoCode_name"
+        app:layout_constraintTop_toTopOf="@id/frg_sales_tv_promoCode_name" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

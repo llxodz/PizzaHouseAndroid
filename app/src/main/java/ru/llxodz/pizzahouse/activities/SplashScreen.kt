@@ -1,10 +1,10 @@
-package ru.llxodz.pizzahouse.activities.main.activities
+package ru.llxodz.pizzahouse.activities
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import ru.llxodz.pizzahouse.activities.main.helper.Constants
+import ru.llxodz.pizzahouse.helper.Constants
 
 class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

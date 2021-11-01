@@ -5,4 +5,13 @@
     <string name="string_online_order">ОНЛАЙН ЗАКАЗ</string>
     <string name="string_delicious_pizza">ВКУСНАЯ ПИЦЦА</string>
     <string name="string_free_shipping">БЕСПЛАТНАЯ ДОСТАВКА</string>
+    <string name="tv_sales_description">Промокод можно использовать в день рождения и 3 дня после, не чаще чем один раз в год. Акция не суммируется с другими акциями</string>
+    <string name="tv_sales_title">В день рождения пицца в подарок!</string>
+    <string name="copy_promocode">Промокод скопирован!</string>
+    <string name="tv_exception">Что-то пошло не так. Попробуйте позже</string>
+    <string name="tv_exception_null_sales">Сейчас нет доступных промокодов. Попробуйте позже</string>
+    <string name="tv_restart_request">Попробовать снова</string>
+    <string name="string_online_order_description">Вы можете заказать нашу пиццу онлайн через приложение всего за несколько минут!</string>
+    <string name="string_delicious_pizza_description">Сможете отведать самой вкусной пиццы на тонком или традиционном тесте</string>
+    <string name="string_free_shipping_description">Наш заказ приедет к вам абсолютно бесплатно или вы можете его забрать у нас в пиццерии</string>
 </resources>
