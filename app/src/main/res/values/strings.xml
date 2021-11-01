@@ -8,4 +8,7 @@
     <string name="tv_sales_description">Промокод можно использовать в день рождения и 3 дня после, не чаще чем один раз в год. Акция не суммируется с другими акциями</string>
     <string name="tv_sales_title">В день рождения пицца в подарок!</string>
     <string name="copy_promocode">Промокод скопирован!</string>
+    <string name="tv_exception">Что-то пошло не так. Попробуйте позже</string>
+    <string name="tv_exception_null_sales">Сейчас нет доступных промокодов. Попробуйте позже</string>
+    <string name="tv_restart_request">Попробовать снова</string>
 </resources>

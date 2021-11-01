@@ -11,7 +11,7 @@ class SplashScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         val sharedPreferences =
-            getSharedPreferences(Constants.ru_llxodz_pizzahouse_onboarding, Context.MODE_PRIVATE)
+            getSharedPreferences(Constants.ru_llxodz_piz zahouse_onboarding, Context.MODE_PRIVATE)
 
         if (sharedPreferences.getBoolean(Constants.ru_llxodz_pizzahouse_onboarding_state, false)) {
             val intent = Intent(this, MainActivity::class.java)
