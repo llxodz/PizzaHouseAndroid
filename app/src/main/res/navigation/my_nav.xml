@@ -24,4 +24,9 @@
         android:name="ru.llxodz.pizzahouse.activities.fragments.main_menu_fragments.CartFragment"
         android:label="fragment_cart"
         tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/OTPCodeFragment"
+        android:name="ru.llxodz.pizzahouse.OTPCodeFragment"
+        android:label="fragment_o_t_p_code"
+        tools:layout="@layout/fragment_o_t_p_code" />
 </navigation>

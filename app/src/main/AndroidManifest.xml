@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ru.llxodz.pizzahouse">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,11 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PizzaHouse"
         android:usesCleartextTraffic="true">
+        <activity android:name=".activities.OTPCodeActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name="ru.llxodz.pizzahouse.activities.OnboardingActivity"
+            android:name=".activities.OnboardingActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="ru.llxodz.pizzahouse.activities.SplashScreen"
+            android:name=".activities.SplashScreen"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -26,7 +29,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="ru.llxodz.pizzahouse.activities.MainActivity"
+            android:name=".activities.MainActivity"
             android:screenOrientation="portrait" />
     </application>
 

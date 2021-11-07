@@ -27,4 +27,14 @@
         <item name="cornerSizeTopRight">6dp</item>
         <item name="backgroundColor">#00FFFFFF</item>
     </style>
+
+    <style name="Widget.App.ButtonStyle"
+        parent="Widget.MaterialComponents.Button">
+        <item name="materialThemeOverlay">@style/OrangeButtonThemeOverlay</item>
+    </style>
+
+    <style name="OrangeButtonThemeOverlay">
+        <item name="colorPrimary">@color/orange</item>
+    </style>
+
 </resources>

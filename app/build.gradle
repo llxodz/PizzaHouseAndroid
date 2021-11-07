@@ -53,6 +53,9 @@ dependencies {
     //circular progress bar
     implementation 'com.mikhaellopez:circularprogressbar:3.1.0'
 
+    //pin edit text field
+    implementation 'com.github.poovamraj:PinEditTextField:1.2.6'
+
     //Dot loader
     implementation 'com.agrawalsuneet.androidlibs:dotsloader:1.4'
 
