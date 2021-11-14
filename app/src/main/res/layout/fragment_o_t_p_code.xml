@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OTPCodeFragment">
+    tools:context=".activities.fragments.main_menu_fragments.OTPCodeFragment">
 
     <ImageView
         android:id="@+id/frg_profile__iv_back_btn"

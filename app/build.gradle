@@ -56,6 +56,9 @@ dependencies {
     //pin edit text field
     implementation 'com.github.poovamraj:PinEditTextField:1.2.6'
 
+    //Motion Toast
+    implementation 'com.github.Spikeysanju:MotionToast:1.4'
+
     //Dot loader
     implementation 'com.agrawalsuneet.androidlibs:dotsloader:1.4'
 

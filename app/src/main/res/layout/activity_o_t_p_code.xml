@@ -9,7 +9,7 @@
 
     <fragment
         android:id="@+id/fragment"
-        android:name="ru.llxodz.pizzahouse.OTPCodeFragment"
+        android:name="ru.llxodz.pizzahouse.activities.fragments.main_menu_fragments.OTPCodeFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:defaultNavHost="true"
