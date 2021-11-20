@@ -13,7 +13,7 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.sales_row_item.view.*
 import ru.llxodz.pizzahouse.R
 import ru.llxodz.pizzahouse.helper.Constants
-import ru.llxodz.pizzahouse.api.ApiSalesItem
+import ru.llxodz.pizzahouse.api.data.ApiSalesItem
 
 class SalesAdapter(
     private var context: Context,
@@ -62,6 +62,5 @@ class SalesAdapter(
                 ).show()
             }
         }
-
     }
 }

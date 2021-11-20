@@ -1,17 +1,15 @@
 package ru.llxodz.pizzahouse.adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.menu_row_category_item.view.*
 import ru.llxodz.pizzahouse.R
-import ru.llxodz.pizzahouse.api.ApiMenuCategory
 
-class MenuCategoryAdapter(
-    private val menuCategoryList: List<ApiMenuCategory>,
-    private val listener: OnItemClickListener
-) : RecyclerView.Adapter<MenuCategoryAdapter.ViewHolder>() {
+class MenuCategoryAdapter(private val context: Context, private var rowIndex: Int) :
+    RecyclerView.Adapter<MenuCategoryAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView = LayoutInflater.from(parent.context)
@@ -20,30 +18,21 @@ class MenuCategoryAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val currentItem = menuCategoryList[position]
 
-        holder.itemView.frg_menu__iv_picture_category.setImageResource(currentItem.image)
-        holder.itemView.frg_menu__tv_category_menu.text = currentItem.name
-    }
-
-    override fun getItemCount(): Int = menuCategoryList.size
-
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
-        View.OnClickListener {
-        init {
-            itemView.setOnClickListener(this)
-        }
-
-        override fun onClick(p0: View?) {
-            val position = adapterPosition
+        holder.itemView.frg_menu__container_category_item.setOnClickListener {
+            rowIndex = position
             notifyDataSetChanged()
-            if (position != RecyclerView.NO_POSITION) {
-                listener.onItemClick(position)
-            }
+        }
+
+        if (rowIndex == position) {
+            holder.itemView.setBackgroundResource(R.drawable.bg_selected_menu_category)
+        } else {
+            holder.itemView.setBackgroundResource(R.drawable.bg_unselected_menu_category)
         }
     }
 
-    interface OnItemClickListener {
-        fun onItemClick(position: Int)
+    override fun getItemCount(): Int = 15
+
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     }
 }

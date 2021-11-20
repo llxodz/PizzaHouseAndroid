@@ -15,8 +15,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import ru.llxodz.pizzahouse.R
 import ru.llxodz.pizzahouse.adapters.SalesAdapter
-import ru.llxodz.pizzahouse.api.ApiRequest
-import ru.llxodz.pizzahouse.api.ApiSalesItem
+import ru.llxodz.pizzahouse.api.request.ApiRequest
+import ru.llxodz.pizzahouse.api.data.ApiSalesItem
 import ru.llxodz.pizzahouse.helper.Constants
 
 

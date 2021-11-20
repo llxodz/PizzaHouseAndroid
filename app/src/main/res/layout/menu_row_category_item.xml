@@ -1,31 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="?android:attr/selectableItemBackground"
+    android:id="@+id/frg_menu__container_category_item"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="12dp">
+    android:layout_marginStart="6dp"
+    android:layout_marginEnd="6dp"
+    android:paddingStart="15dp"
+    android:paddingTop="5dp"
+    android:paddingEnd="15dp"
+    android:paddingBottom="2dp">
 
     <ImageView
         android:id="@+id/frg_menu__iv_picture_category"
         android:layout_width="38dp"
         android:layout_height="38dp"
-        android:src="@drawable/pizza"
+        android:src="@drawable/ic_pizza_cat"
+        app:layout_constraintBottom_toTopOf="@id/frg_menu__tv_category_menu"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="RtlSymmetry" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/frg_menu__tv_category_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Пицца"
         android:layout_marginTop="4dp"
-        android:fontFamily="@font/montserrat_medium"
+        android:autoSizeMaxTextSize="10sp"
+        android:fontFamily="@font/montserrat_bold"
+        android:maxLines="1"
+        android:text="Пицца"
+        android:textColor="@color/blackLight"
         android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/frg_menu__iv_picture_category"
-        app:layout_constraintEnd_toEndOf="@id/frg_menu__iv_picture_category"/>
+        app:layout_constraintTop_toBottomOf="@id/frg_menu__iv_picture_category" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,19 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_menu.*
 import ru.llxodz.pizzahouse.R
 import ru.llxodz.pizzahouse.adapters.MenuCategoryAdapter
-import ru.llxodz.pizzahouse.api.ApiMenuCategory
-import ru.llxodz.pizzahouse.helper.Helper
 
-class MenuFragment : Fragment(), MenuCategoryAdapter.OnItemClickListener {
-
-    private val exampleList = Helper.generateMenuCategoryList(12)
-    private val adapter = MenuCategoryAdapter(exampleList, this)
+class MenuFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,13 +27,9 @@ class MenuFragment : Fragment(), MenuCategoryAdapter.OnItemClickListener {
     }
 
     private fun setupRecyclerView() {
-        frg_menu__rv_category_menu.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+        val adapter = MenuCategoryAdapter(requireContext(),-1)
+        frg_menu__rv_category_menu.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         frg_menu__rv_category_menu.adapter = adapter
-    }
-
-    override fun onItemClick(position: Int) {
-        val clickedItem: ApiMenuCategory = exampleList[position]
-//        clickedItem.image = R.drawable.pizza
-        adapter.notifyItemChanged(position)
     }
 }
