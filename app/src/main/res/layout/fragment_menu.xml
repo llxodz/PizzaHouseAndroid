@@ -14,7 +14,7 @@
         android:fontFamily="@font/montserrat_medium"
         android:gravity="center_vertical"
         android:paddingStart="16dp"
-        android:text="Меню"
+        android:text="@string/frg_menu__text_tv_menu"
         android:textColor="@color/mainBlack"
         android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -25,14 +25,23 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/frg_menu__rv_category_menu"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="73dp"
         android:layout_marginStart="11dp"
         android:layout_marginTop="8dp"
-        android:overScrollMode="never"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/frg_sales__tv_menu"
-        app:layout_constraintStart_toStartOf="parent"
+        android:overScrollMode="never"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frg_sales__tv_menu" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/frg_menu__rv_menu_items"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frg_menu__rv_category_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

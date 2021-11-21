@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_menu.*
 import ru.llxodz.pizzahouse.R
 import ru.llxodz.pizzahouse.adapters.MenuCategoryAdapter
+import ru.llxodz.pizzahouse.adapters.MenuProductsAdapter
 
 class MenuFragment : Fragment() {
 
@@ -23,13 +24,20 @@ class MenuFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setupRecyclerView()
+        setupRecyclerViewMenuCategory()
+        setupRecyclerViewMenuProducts()
     }
 
-    private fun setupRecyclerView() {
-        val adapter = MenuCategoryAdapter(requireContext(),-1)
+    private fun setupRecyclerViewMenuCategory() {
+        val adapterCategory = MenuCategoryAdapter(requireContext(),0)
         frg_menu__rv_category_menu.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        frg_menu__rv_category_menu.adapter = adapter
+        frg_menu__rv_category_menu.adapter = adapterCategory
+    }
+
+    private fun setupRecyclerViewMenuProducts() {
+        val adapterMenuProducts = MenuProductsAdapter()
+        frg_menu__rv_menu_items.layoutManager = LinearLayoutManager(activity)
+        frg_menu__rv_menu_items.adapter = adapterMenuProducts
     }
 }
