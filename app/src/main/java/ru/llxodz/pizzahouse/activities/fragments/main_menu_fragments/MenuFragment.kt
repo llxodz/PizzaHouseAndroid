@@ -12,10 +12,12 @@ import ru.llxodz.pizzahouse.adapters.MenuCategoryAdapter
 import ru.llxodz.pizzahouse.adapters.MenuProductsAdapter
 import ru.llxodz.pizzahouse.adapters.UpdateRecyclerView
 import ru.llxodz.pizzahouse.api.data.ApiMenuItem
+import java.net.URL
 
 class MenuFragment : Fragment(), UpdateRecyclerView {
 
     private val items = ArrayList<ApiMenuItem>()
+    private var adapterCategory = MenuCategoryAdapter(this)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,12 +36,16 @@ class MenuFragment : Fragment(), UpdateRecyclerView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Setup RecyclerViews
         setupRecyclerViewMenuCategory()
         setupRecyclerViewMenuProducts()
+
+        // LoadData
+//        epi.categoryes { newcategories in
+        adapterCategory.categories = 
     }
 
     private fun setupRecyclerViewMenuCategory() {
-        val adapterCategory = MenuCategoryAdapter(requireContext(),0, this)
         frg_menu__rv_category_menu.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         frg_menu__rv_category_menu.adapter = adapterCategory
@@ -51,9 +57,25 @@ class MenuFragment : Fragment(), UpdateRecyclerView {
         frg_menu__rv_menu_items.adapter = adapterMenuProducts
     }
 
-    override fun callback(position: Int, items: ArrayList<ApiMenuItem>) {
-        val adapter = MenuProductsAdapter(items)
-        adapter.notifyDataSetChanged()
-        frg_menu__rv_menu_items.adapter = adapter
+//    override fun callback(position: Int, items: ArrayList<ApiMenuItem>) {
+//        val adapter = MenuProductsAdapter(items)
+//        adapter.notifyDataSetChanged()
+//        frg_menu__rv_menu_items.adapter = adapter
+//    }
+
+    override fun didSelectCategory(url: URL) {
+        // TODO: this
+        // run indicator loader
+//        API.getitems() { //callback newitems in
+        val items = ArrayList<ApiMenuItem>()
+        items.add(ApiMenuItem(1, "Пеперони", R.drawable.pizza_name_delete, 400))
+        items.add(ApiMenuItem(2, "Пеперони", R.drawable.pizza_name_delete, 400))
+        items.add(ApiMenuItem(3, "Пеперони", R.drawable.pizza_name_delete, 400))
+        items.add(ApiMenuItem(4, "Пеперони", R.drawable.pizza_name_delete, 500))
+        items.add(ApiMenuItem(4, "Пеперони", R.drawable.pizza_name_delete, 500))
+        items.add(ApiMenuItem(4, "Пеперони", R.drawable.pizza_name_delete, 500))
+//            frg_menu__rv_menu_items.adapter.fetrch(data: newitems)
+//        }
+        // stop indicator
     }
 }

@@ -1,7 +1,8 @@
 package ru.llxodz.pizzahouse.adapters
 
-import ru.llxodz.pizzahouse.api.data.ApiMenuItem
+import java.net.URL
 
 interface UpdateRecyclerView {
-    fun callback(position: Int, items: ArrayList<ApiMenuItem>)
+
+    fun didSelectCategory(url: URL)
 }

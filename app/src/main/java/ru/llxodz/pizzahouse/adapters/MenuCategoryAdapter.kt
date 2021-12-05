@@ -9,15 +9,20 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.menu_row_category_item.view.*
 import ru.llxodz.pizzahouse.R
+import ru.llxodz.pizzahouse.api.data.ApiMenuCategory
 import ru.llxodz.pizzahouse.api.data.ApiMenuItem
+import ru.llxodz.pizzahouse.api.data.url
 
 class MenuCategoryAdapter(
-    private val context: Context,
-    private var rowIndex: Int,
-    private val updateRecyclerView: UpdateRecyclerView,
-    private var check: Boolean = true
-) :
-    RecyclerView.Adapter<MenuCategoryAdapter.ViewHolder>() {
+    private val updateRecyclerView: UpdateRecyclerView? = null,
+    private var rowIndex: Int = 0
+): RecyclerView.Adapter<MenuCategoryAdapter.ViewHolder>() {
+
+    var categories: ArrayList<ApiMenuCategory> = arrayListOf()
+        set(value) {
+            field = value
+            notifyDataSetChanged()
+        }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView = LayoutInflater.from(parent.context)
@@ -27,42 +32,9 @@ class MenuCategoryAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        if (check) {
-            val items = ArrayList<ApiMenuItem>()
-            items.add(ApiMenuItem(1, "Пеперони", R.drawable.pizza_name_delete, 400))
-            items.add(ApiMenuItem(2, "Пеперони", R.drawable.pizza_name_delete, 400))
-            items.add(ApiMenuItem(3, "Пеперони", R.drawable.pizza_name_delete, 400))
-            items.add(ApiMenuItem(4, "Пеперони", R.drawable.pizza_name_delete, 400))
-
-            updateRecyclerView.callback(position, items)
-
-            check = false
-        }
-
         holder.itemView.frg_menu__container_category_item.setOnClickListener {
             rowIndex = position
-            notifyDataSetChanged()
-
-            when (position) {
-                0 -> {
-                    val items = ArrayList<ApiMenuItem>()
-                    items.add(ApiMenuItem(1, "Пеперони", R.drawable.pizza_name_delete, 400))
-                    items.add(ApiMenuItem(2, "Пеперони", R.drawable.pizza_name_delete, 400))
-                    items.add(ApiMenuItem(3, "Пеперони", R.drawable.pizza_name_delete, 400))
-                    items.add(ApiMenuItem(4, "Пеперони", R.drawable.pizza_name_delete, 500))
-                    items.add(ApiMenuItem(4, "Пеперони", R.drawable.pizza_name_delete, 500))
-                    items.add(ApiMenuItem(4, "Пеперони", R.drawable.pizza_name_delete, 500))
-                    updateRecyclerView.callback(position, items)
-                }
-                1 -> {
-                    val items = ArrayList<ApiMenuItem>()
-                    items.add(ApiMenuItem(1, "Шаверма", R.drawable.ic_baseline_chevron_left_24, 400))
-                    items.add(ApiMenuItem(2, "Шаверма", R.drawable.ic_baseline_chevron_left_24, 400))
-                    items.add(ApiMenuItem(3, "Шаверма", R.drawable.ic_baseline_chevron_left_24, 400))
-                    items.add(ApiMenuItem(4, "Шаверма", R.drawable.ic_baseline_chevron_left_24, 400))
-                    updateRecyclerView.callback(position, items)
-                }
-            }
+            updateRecyclerView?.didSelectCategory(categories[position].url)
         }
 
         if (rowIndex == position) {
