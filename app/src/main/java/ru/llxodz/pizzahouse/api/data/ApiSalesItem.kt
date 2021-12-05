@@ -1,4 +1,4 @@
-package ru.llxodz.pizzahouse.api
+package ru.llxodz.pizzahouse.api.data
 
 data class ApiSalesItem(
     val description: String,
