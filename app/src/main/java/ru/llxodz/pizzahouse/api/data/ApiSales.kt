@@ -1,3 +1,3 @@
-package ru.llxodz.pizzahouse.api
+package ru.llxodz.pizzahouse.api.data
 
 class ApiSales : ArrayList<ApiSalesItem>()

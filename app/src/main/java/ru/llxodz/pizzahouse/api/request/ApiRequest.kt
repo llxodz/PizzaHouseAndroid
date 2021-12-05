@@ -1,8 +1,8 @@
-package ru.llxodz.pizzahouse.api
+package ru.llxodz.pizzahouse.api.request
 
 import retrofit2.Response
 import retrofit2.http.GET
-import java.io.IOException
+import ru.llxodz.pizzahouse.api.data.ApiSalesItem
 
 interface ApiRequest {
 
