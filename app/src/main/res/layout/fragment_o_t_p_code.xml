@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.fragments.main_menu_fragments.OTPCodeFragment">
+
+    <ImageView
+        android:id="@+id/frg_profile__iv_back_btn"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_margin="16dp"
+        android:src="@drawable/left_chevron"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/frg_profile__tv_enter_otp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Теперь введите код"
+        android:textColor="@color/mainBlack"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frg_profile__iv_back_btn" />
+
+    <TextView
+        android:id="@+id/frg_profile__tv_hint_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="Код отправили сообщением на"
+        android:textColor="@color/mainBlack"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frg_profile__tv_enter_otp" />
+
+    <TextView
+        android:id="@+id/frg_profile__tv_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="+7 911 965-18-46"
+        android:textColor="@color/mainBlack"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frg_profile__tv_hint_number" />
+
+    <com.poovam.pinedittextfield.LinePinField
+        android:id="@+id/line_pin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:inputType="phone"
+        android:textSelectHandle="@drawable/text_handle"
+        android:textSize="24sp"
+        app:distanceInBetween="10dp"
+        app:fieldColor="#ddd"
+        app:highlightColor="@color/orange"
+        app:highlightType="completedFields"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frg_profile__tv_number"
+        app:noOfFields="4" />
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.App.ButtonStyle"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/button"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="получить новый код"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="@color/mainBlack" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
